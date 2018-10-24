@@ -1,13 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Radium, { Style } from 'radium';
 
 const Navbar = () => {
     return (
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-            <Link className="col-sm-3 col-md-2 mr-0" to="/" style={{
-                color: "white"
-            }}>
+            <Link className="brand col-sm-3 col-md-2 mr-0" to="/">
                 <img src="/favicon/favicon-32x32.png" style={{marginRight: "1em"}}/>
                 Compendium
             </Link>
