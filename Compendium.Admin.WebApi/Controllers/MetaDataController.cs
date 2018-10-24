@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Compendium.Admin.WebApi.Managers;
 
 namespace Compendium.Admin.WebApi.Controllers
 {
-    [Produces("application/json")]
-    //[Route("api/MetaData")]
-    public class MetaDataController : Controller
+    public class MetaDataController : ControllerBase
     {
-        public ActionResult GetMetaData()
+        MetaDataManager metaData = new MetaDataManager();
+
+        [Route("api/GetMetaData/{$id}")]
+        public IActionResult GetMetaData()
         {
 
             return Ok();
