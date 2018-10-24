@@ -17,14 +17,15 @@ export default class Table extends Component {
     render() {
         return (
             <div className="table-responsive">
+                <h2 style={{marginTop: "2%"}}>Recently Added</h2>
                 <table className="table table-striped table-sm">
                     <thead>
                         <tr>
                         <th>#</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
-                        <th>Header</th>
+                        <th>Title</th>
+                        <th>Creator</th>
+                        <th>Date Added</th>
+                        <th>Date Last Modified</th>
                         </tr>
                     </thead>
                     <tbody>

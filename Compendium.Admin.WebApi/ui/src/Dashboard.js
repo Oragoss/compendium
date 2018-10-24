@@ -1,6 +1,7 @@
 import React from 'react';
 import Table from  './Table';
 import Layout from './Shared/Layout';
+import Card from './Card';
 
 export default class Dashboard extends React.Component {
     state = {
@@ -25,8 +26,13 @@ export default class Dashboard extends React.Component {
                         </button>
                         </div>
                     </div>
-
-                    <h2>Section title</h2>
+                    <div className="row">
+                        <Card src="./images/stock-img-album.svg" title="Create new photo collection" text="Create a new photo collection to store images" buttonText="+Add" buttonType="primary"/>
+                        <Card src="./images/book-stack.svg" title="Create new book collection" text="Create a new digital book collection to your digital books" buttonText="+Add" buttonType="primary"/>
+                        <Card src="./images/stock-img.svg" title="Add new photo" text="Add a new photo to a new or existing collection" buttonText="+Add" buttonType="primary"/>
+                        <Card src="./images/book-orange.svg" title="Add new book" text="Add a new book to a new or existing collection" buttonText="+Add" buttonType="primary"/>
+                        <Card src="./images/blank-document.svg" title="Add new file" text="Add a new html, txt, pdf, or other file to a new or existing collection" buttonText="+Add" buttonType="primary"/>
+                    </div>
                     <Table />
                 </main>
             </Layout>
