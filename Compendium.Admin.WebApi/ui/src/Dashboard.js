@@ -27,12 +27,13 @@ export default class Dashboard extends React.Component {
                         </div>
                     </div>
                     <div className="row">
-                        <Card src="./images/stock-img-album.svg" title="Create new photo collection" text="Create a new photo collection to store images" buttonText="+Add" buttonType="primary"/>
-                        <Card src="./images/book-stack.svg" title="Create new book collection" text="Create a new digital book collection to your digital books" buttonText="+Add" buttonType="primary"/>
-                        <Card src="./images/file-drop.svg" title="Create new archive" text="Create a new archive to group you collections" buttonText="+Add" buttonType="primary"/>
+                    <Card src="./images/file-drop.svg" title="Create new exhibit" text="Create a new exhibit to group your collections" buttonText="Create" buttonType="primary" link="/createexhibit"/>
+                    <Card src="./images/stock-img-album.svg" title="View current exhibits" text="View and eidt all of your current exhibits" buttonText="View" buttonType="info" link="/viewexhibits"/>
+                        {/* <Card src="./images/stock-img-album.svg" title="Create new photo collection" text="Create a new photo collection to store images" buttonText="Create" buttonType="info"/>
+                        <Card src="./images/book-stack.svg" title="Create new book collection" text="Create a new digital book collection to your digital books" buttonText="Create" buttonType="info"/>
                         <Card src="./images/stock-img.svg" title="Add new photo" text="Add a new photo to a new or existing collection" buttonText="+Add" buttonType="primary"/>
                         <Card src="./images/book-orange.svg" title="Add new book" text="Add a new book to a new or existing collection" buttonText="+Add" buttonType="primary"/>
-                        <Card src="./images/blank-document.svg" title="Add new file" text="Add a new html, txt, pdf, or other file to a new or existing collection" buttonText="+Add" buttonType="primary"/>
+                        <Card src="./images/blank-document.svg" title="Add new file" text="Add a new html, txt, pdf, or other file to a new or existing collection" buttonText="+Add" buttonType="primary"/> */}
                     </div>
                     <Table />
                 </main>

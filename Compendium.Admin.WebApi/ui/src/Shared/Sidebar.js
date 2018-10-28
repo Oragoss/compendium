@@ -21,7 +21,7 @@ const Sidebar = () => {
                 <li className="nav-item">
                     <a className="nav-link" href="#">
                     <span data-feather="shopping-cart"></span>
-                        Collections
+                        Exhibits
                     </a>
                 </li>
                 <li className="nav-item">

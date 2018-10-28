@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <nav className="navbar navbar-dark fixed-top  flex-md-nowrap p-0 shadow" style={{backgroundColor:"#EB6864"}}>
             <Link className="brand col-sm-3 col-md-2 mr-0" to="/">
                 <img src="/favicon/favicon-32x32.png" style={{marginRight: "1em"}}/>
                 Compendium

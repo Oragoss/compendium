@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 
-//TODO: Add some animations
-const Card = (props) => {
+const Exhibit = (props) => {
     return (
         <div className="card col-md-6 col-xs-12" style={{width: "5em"}}>
             <img className="card-img-top" src={props.src} style={{
@@ -12,11 +11,11 @@ const Card = (props) => {
                 }} alt="Card image cap" />
             <div className="card-body text-center">
                 <h5 className="card-title">{props.title}</h5>
-                <p className="card-text">{props.text}</p>
-                <Link to={`${props.link}`} className={`btn btn-${props.buttonType}`}>{props.buttonText}</Link>
+                <p className="card-text">{props.description}</p>
+                <a href="#" className={`btn btn-${props.buttonType}`}>{props.buttonText}</a>
             </div>
         </div>
     );
 }
 
-export default Card;
+export default Exhibit;
