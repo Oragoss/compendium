@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Layout from './Shared/Layout';
+import Card from './Card';
 import Exhibit from './Exhibit';
 
 const ExhibitContext = React.createContext();
@@ -30,8 +31,8 @@ export default class ExhibitContainer extends Component {
                         <h1>My Exhibits</h1>
                     </div>
                     <div className="row">
-                            <Exhibit src="./images/stock-img.svg" title="View Chickisaw Exhibit" description="View the Chickasaw Nation exhibit" buttonText="View" buttonType="primary" />
-                            <Exhibit src="./images/stock-img.svg" title="View Viliage Exhibit" description="View The City of the Village exhibit" buttonText="View" buttonType="primary" />
+                            <Card src="./images/stock-img.svg" title="View Chickisaw Exhibit" description="View the Chickasaw Nation exhibit" buttonText="View" buttonType="primary" />
+                            <Card src="./images/stock-img.svg" title="View Viliage Exhibit" description="View The City of the Village exhibit" buttonText="View" buttonType="primary" />
                         </div>
                 </div>
             </Layout>

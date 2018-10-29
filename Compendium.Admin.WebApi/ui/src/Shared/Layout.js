@@ -12,10 +12,9 @@ export default class Layout extends React.Component {
             //TODO: This
             <React.Fragment>
                 <Navbar />
-                
+                <Sidebar />
                 <div className="container-fluid" style={{marginTop: "5%"}}>
                     <div className="row">
-                        <Sidebar />
                         {this.props.children}
                     </div>
                 </div>

@@ -12,7 +12,7 @@ const Card = (props) => {
                 }} alt="Card image cap" />
             <div className="card-body text-center">
                 <h5 className="card-title">{props.title}</h5>
-                <p className="card-text">{props.text}</p>
+                <p className="card-text">{props.description}</p>
                 <Link to={`${props.link}`} className={`btn btn-${props.buttonType}`}>{props.buttonText}</Link>
             </div>
         </div>

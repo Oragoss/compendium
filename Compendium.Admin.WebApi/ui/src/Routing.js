@@ -8,6 +8,7 @@ import AddFile from './Create/AddFile';
 import CreateExhibit from './Create/CreateExhibit';
 import CreateCollection from './Create/CreateCollection';
 import ExhibitContainer from './ExhibitContainer';
+import CollectionContainer from './Collection/CollectionContainer';
 
 //Routing and authentication happens here
 export default class Routing extends Component {
@@ -25,12 +26,13 @@ export default class Routing extends Component {
             <Switch>
                 <Route exact path="/" component={Dashboard} isLoggedIn={this.isLoggedIn} />
                 <Route path="/statistics" component={Statistics} isLoggedIn={this.isLoggedIn} />
-                <Route path="/addphoto" component={AddPhoto} isLoggedIn={this.isLoggedIn} />
+                {/* <Route path="/addphoto" component={AddPhoto} isLoggedIn={this.isLoggedIn} />
                 <Route path="/addbook" component={AddBook} isLoggedIn={this.isLoggedIn} />
                 <Route path="/addfile" component={AddFile} isLoggedIn={this.isLoggedIn} />
                 <Route path="/createexhibit" component={CreateExhibit} isLoggedIn={this.isLoggedIn} />
-                <Route path="/createcollection" component={CreateCollection} isLoggedIn={this.isLoggedIn} />
-                <Route path="/viewexhibits" component={ExhibitContainer} isLoggedIn={this.isLoggedIn} />
+                <Route path="/createcollection" component={CreateCollection} isLoggedIn={this.isLoggedIn} /> */}
+                <Route path="/exhibits" component={ExhibitContainer} isLoggedIn={this.isLoggedIn} />
+                <Route path="/collections" component={CollectionContainer} isLoggedIn={this.isLoggedIn} />
             </Switch>
         );
     }
