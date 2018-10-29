@@ -4,6 +4,7 @@ import Card from '../Card';
 import CreateCollectionPage from './CreateCollectionPage';
 import CollectionContext from './CollectionContext';
 // import { Grid, Row, Col } from 'react-flexbox-grid';
+import AddBook from './AddBook';
 
 export default class CollectionContainer extends Component {
     state = {
@@ -15,11 +16,11 @@ export default class CollectionContainer extends Component {
         //TODO: Get all of the ehibit names and display them
         //TODO: Right the fetch api instead of using this hardcoded fake data
 
-        let fakeData = [
-            {
+        let fakeData = {
+            collections: [{
                 id: 123,
                 title: "Chickasaw Photo Collection",
-                imageSource: "./images/stock-img-album.svg",
+                imageSource: "./images/blank-document.svg",
                 description: "View the Chickasaw Nation photo collection",
                 // buttonText: "View"
             },
@@ -29,8 +30,12 @@ export default class CollectionContainer extends Component {
                 imageSource: "./images/stock-img-album.svg",
                 description: "View the Chickasaw Nation book collection",
                 // buttonText: "View"
-            }
-        ]
+            }],
+            books: [],
+            photos: [],
+            files: [],
+
+        }
 
         this.setState({
             collectionData: fakeData
@@ -46,19 +51,20 @@ export default class CollectionContainer extends Component {
             return;
         }
 
-        for(let i = 0; i < collectionData.length; i++) {
-            console.log(collectionData[i]);
+        for(let i = 0; i < collectionData.collections.length; i++) {
             rows.push(
-                <Card
-                    link=""
-                    key={i}
-                    id={collectionData[i].id}
-                    src={collectionData[i].imageSource}
-                    title={collectionData[i].title}
-                    description={collectionData[i].description}
-                    buttonText="View"
-                    buttonType="primary"
-                />
+                <div className="card col-md-6 col-xs-12" style={{width: "5em"}} key={i}>
+                    <img className="card-img-top" src={collectionData.collections[i].imageSource || "./images/stock-img-album.svg"} style={{
+                            width: "15%",
+                            marginLeft:"42.5%",
+                            marginTop: "2em"
+                        }} alt="Card image cap" />
+                    <div className="card-body text-center">
+                        <h5 className="card-title">{collectionData.collections[i].title}</h5>
+                        <p className="card-text">{collectionData.collections[i].description}</p>
+                        <button id={collectionData.collections[i].id} className="btn btn-info" onClick={this.displaySpecificCollection}>View</button>
+                    </div>
+                </div>
             );
         }
 
@@ -66,8 +72,12 @@ export default class CollectionContainer extends Component {
     }
 
     displaySpecificCollection = (e) => {
+        console.log(e.target.id);
         //TODO: diplay the collection using the target's ID 'e.target.id' or whatever
         //Basically switch out the view all collections to a view specific collection
+
+        //TODO: Start here, create the page to view a specific selection.
+
     }
 
     displayDefaultSection = () => {

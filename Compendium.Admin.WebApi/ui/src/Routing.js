@@ -2,11 +2,11 @@ import React, {Component} from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Dashboard from './Dashboard';
 import Statistics from './Statistics/Statistics';
-import AddPhoto from './Create/AddPhoto';
-import AddBook from './Create/AddBook';
-import AddFile from './Create/AddFile';
-import CreateExhibit from './Create/CreateExhibit';
-import CreateCollection from './Create/CreateCollection';
+// import AddPhoto from './Create/AddPhoto';
+import AddBook from './Collection/AddBook';
+// import AddFile from './Create/AddFile';
+// import CreateExhibit from './Create/CreateExhibit';
+// import CreateCollection from './Create/CreateCollection';
 import ExhibitContainer from './ExhibitContainer';
 import CollectionContainer from './Collection/CollectionContainer';
 
@@ -27,10 +27,11 @@ export default class Routing extends Component {
                 <Route exact path="/" component={Dashboard} isLoggedIn={this.isLoggedIn} />
                 <Route path="/statistics" component={Statistics} isLoggedIn={this.isLoggedIn} />
                 {/* <Route path="/addphoto" component={AddPhoto} isLoggedIn={this.isLoggedIn} />
-                <Route path="/addbook" component={AddBook} isLoggedIn={this.isLoggedIn} />
+                
                 <Route path="/addfile" component={AddFile} isLoggedIn={this.isLoggedIn} />
                 <Route path="/createexhibit" component={CreateExhibit} isLoggedIn={this.isLoggedIn} />
                 <Route path="/createcollection" component={CreateCollection} isLoggedIn={this.isLoggedIn} /> */}
+                <Route path="/addbook" component={AddBook} isLoggedIn={this.isLoggedIn} />
                 <Route path="/exhibits" component={ExhibitContainer} isLoggedIn={this.isLoggedIn} />
                 <Route path="/collections" component={CollectionContainer} isLoggedIn={this.isLoggedIn} />
             </Switch>

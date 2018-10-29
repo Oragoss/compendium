@@ -2,22 +2,8 @@ import React from 'react';
 import CollectionContext from './CollectionContext';
 import SelectComponent from '../Shared/SelectComponent.js';
 
+const AddBook = (props) => {
 
-const CreateCollectionPage = (props) => {
-    let options = [
-        { value: 'Collection', label: 'Collection' },
-        { value: 'Dataset', label: 'Dataset' },
-        { value: 'Event', label: 'Event' },
-        { value: 'Image', label: 'Image' },
-        { value: 'InteractiveResource', label: 'InteractiveResource' },
-        { value: 'MovingImage', label: 'MovingImage' },
-        { value: 'PhysicalObject', label: 'PhysicalObject' },
-        { value: 'Service', label: 'Service' },
-        { value: 'Software', label: 'Software' },
-        { value: 'Sound', label: 'Sound' },
-        { value: 'StillImage', label: 'StillImage' },
-        { value: 'Text', label: 'Text' }
-    ];
     return (
         // React Context.Consumer?
         <CollectionContext.Consumer>
@@ -32,7 +18,7 @@ const CreateCollectionPage = (props) => {
                                 }} alt="Card image cap"
                             />
                             <div className="form-group">
-                                <label htmlFor="exampleFormControlFile1">Example file input</label>
+                                <label htmlFor="exampleFormControlFile1">Input book file here</label>
                                 <input type="file" className="form-control-file" />
                             </div>
                         </div>
@@ -42,9 +28,7 @@ const CreateCollectionPage = (props) => {
                             <label>Subject</label>
                             <input className="form-control" type="text" />
                             <label>Type</label>
-                            <SelectComponent
-                                options={options}
-                            />
+                            <SelectComponent />
                         </div>
                     </div>
                     <div className="row">
@@ -104,4 +88,4 @@ const CreateCollectionPage = (props) => {
     );
 }
 
-export default CreateCollectionPage;
+export default AddBook;
