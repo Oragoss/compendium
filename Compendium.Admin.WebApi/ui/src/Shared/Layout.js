@@ -9,16 +9,15 @@ export default class Layout extends React.Component {
 
     render() {
         return (
-            //TODO: This
-            <React.Fragment>
+            <div className="container-fluid" style={{marginTop: "5%"}}>
                 <Navbar />
-                <Sidebar />
-                <div className="container-fluid" style={{marginTop: "5%"}}>
-                    <div className="row">
-                        {this.props.children}
-                    </div>
+                <div className="col-md-3 col-xs-12">
+                    <Sidebar />
                 </div>
-            </React.Fragment>
+                <div className="col-md-9 col-xs-12">
+                    {this.props.children}
+                </div>
+            </div>
         );
     }
 }

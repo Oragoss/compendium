@@ -1,15 +1,16 @@
 import React, {Component} from "react";
-import Layout from '../Shared/Layout';
-import Card from '../Card';
 import CreateCollectionPage from './CreateCollectionPage';
 import CollectionContext from './CollectionContext';
 // import { Grid, Row, Col } from 'react-flexbox-grid';
-import AddBook from './AddBook';
+import SpecificCollectionContainer from './SpecificCollectionContainer';
 
 export default class CollectionContainer extends Component {
     state = {
         collectionData: null,
-        view: 'view'
+        view: 'view',
+        specificPage: {
+            id:""
+        }
     }
 
     componentDidMount() {
@@ -78,6 +79,14 @@ export default class CollectionContainer extends Component {
 
         //TODO: Start here, create the page to view a specific selection.
 
+        //Do you need to pass the id? Can't you just change the state and use the info from the specific collection you clicked on?
+        //Can't the button you clicked on change the state?
+        this.setState({
+            view: 'specific',
+            specificPage: {
+                id: e.target.id
+            }
+        });
     }
 
     displayDefaultSection = () => {
@@ -85,8 +94,9 @@ export default class CollectionContainer extends Component {
             <React.Fragment>
                 <h2>There aren't any collections yet. Create one! </h2>
                 <div className="row">
-                    <Card src="./images/stock-img-album.svg" title="Create new photo collection" description="Create a new photo collection to store images" buttonText="Create" buttonType="info"/>
-                    <Card src="./images/book-stack.svg" title="Create new book collection" description="Create a new digital book collection to your digital books" buttonText="Create" buttonType="info"/>
+                    {/* <Card src="./images/stock-img-album.svg" title="Create new photo collection" description="Create a new photo collection to store images" buttonText="Create" buttonType="info"/>
+                    <Card src="./images/book-stack.svg" title="Create new book collection" description="Create a new digital book collection to your digital books" buttonText="Create" buttonType="info"/> */}
+                    TODO: Add this!
                 </div>
             </React.Fragment>
         );
@@ -110,7 +120,7 @@ export default class CollectionContainer extends Component {
 
         if (view === 'view') {
             page =
-            <div className="container col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div className="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div className="row">
                     <h1>Collections</h1>
                 </div>
@@ -131,6 +141,9 @@ export default class CollectionContainer extends Component {
                 </div>
                 <CreateCollectionPage width="100em" />
             </div>
+        }else if (view==='specific') {
+            page =
+            <SpecificCollectionContainer id={this.state.specificPage.id} />;
         }
 
         return page
@@ -149,9 +162,7 @@ export default class CollectionContainer extends Component {
 
                 }
             }}>
-                <Layout>
-                    {this.pageSetup()}
-                </Layout>
+                {this.pageSetup()}
             </CollectionContext.Provider>
         );
     }

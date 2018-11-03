@@ -81,7 +81,7 @@ const AddBook = (props) => {
                         <input className="form-control" type="text" />
                     </div>
                     <br />
-                    <button className="btn btn-success">Create</button>
+                    <button className="btn btn-success">Add</button>
                 </div>
             )}
         </CollectionContext.Consumer>

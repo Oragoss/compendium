@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Layout from './Shared/Layout';
 import { Route, Switch, Redirect } from "react-router-dom";
 import Dashboard from './Dashboard';
 import Statistics from './Statistics/Statistics';
@@ -27,7 +28,6 @@ export default class Routing extends Component {
                 <Route exact path="/" component={Dashboard} isLoggedIn={this.isLoggedIn} />
                 <Route path="/statistics" component={Statistics} isLoggedIn={this.isLoggedIn} />
                 {/* <Route path="/addphoto" component={AddPhoto} isLoggedIn={this.isLoggedIn} />
-                
                 <Route path="/addfile" component={AddFile} isLoggedIn={this.isLoggedIn} />
                 <Route path="/createexhibit" component={CreateExhibit} isLoggedIn={this.isLoggedIn} />
                 <Route path="/createcollection" component={CreateCollection} isLoggedIn={this.isLoggedIn} /> */}
@@ -41,8 +41,10 @@ export default class Routing extends Component {
     render() {
         return (
             <React.Fragment>
-                {/* {this.isLoggedIn ? this.renderAdminRoutes() : <Redirect to="/login"/>} */}
-                {this.renderAdminRoutes()}
+                <Layout>
+                    {/* {this.isLoggedIn ? this.renderAdminRoutes() : <Redirect to="/login"/>} */}
+                    {this.renderAdminRoutes()}
+                </Layout>
             </React.Fragment>
         );
     }
