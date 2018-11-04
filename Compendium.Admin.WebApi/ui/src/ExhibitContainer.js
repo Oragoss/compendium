@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Layout from './Shared/Layout';
 import Card from './Card';
-import Exhibit from './Exhibit';
+// import Exhibit from './Exhibit';
 
 const ExhibitContext = React.createContext();
 

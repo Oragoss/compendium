@@ -9,7 +9,7 @@ const Card = (props) => {
                     width: "15%",
                     marginLeft:"42.5%",
                     marginTop: "2em"
-                }} alt="Card image cap" />
+                }} alt="Card cap" />
             <div className="card-body text-center">
                 <h5 className="card-title">{props.title}</h5>
                 <p className="card-text">{props.description}</p>

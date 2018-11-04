@@ -29,7 +29,7 @@ const CreateCollectionPage = (props) => {
                                     width: "15%",
                                     marginLeft:"42.5%",
                                     // marginTop: "2em"
-                                }} alt="Card image cap"
+                                }} alt="Card cap"
                             />
                             <div className="form-group">
                                 <label htmlFor="exampleFormControlFile1">Example file input</label>

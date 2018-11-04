@@ -9,7 +9,8 @@ export default class CollectionContainer extends Component {
         collectionData: null,
         view: 'view',
         specificPage: {
-            id:""
+            id:"",
+            title:""
         }
     }
 
@@ -21,16 +22,20 @@ export default class CollectionContainer extends Component {
             collections: [{
                 id: 123,
                 title: "Chickasaw Photo Collection",
-                imageSource: "./images/blank-document.svg",
+                imageSource: "./images/stock-img-album.svg",
                 description: "View the Chickasaw Nation photo collection",
-                // buttonText: "View"
             },
             {
                 id: 321,
                 title: "Chickasaw Book Collection",
-                imageSource: "./images/stock-img-album.svg",
+                imageSource: "./images/book-stack.svg",
                 description: "View the Chickasaw Nation book collection",
-                // buttonText: "View"
+            },
+            {
+                id: 321,
+                title: "The Village Library Book Collection",
+                imageSource: "./images/book-stack.svg",
+                description: "View the Village Library book collection",
             }],
             books: [],
             photos: [],
@@ -59,11 +64,11 @@ export default class CollectionContainer extends Component {
                             width: "15%",
                             marginLeft:"42.5%",
                             marginTop: "2em"
-                        }} alt="Card image cap" />
+                        }} alt="Card cap" />
                     <div className="card-body text-center">
                         <h5 className="card-title">{collectionData.collections[i].title}</h5>
                         <p className="card-text">{collectionData.collections[i].description}</p>
-                        <button id={collectionData.collections[i].id} className="btn btn-info" onClick={this.displaySpecificCollection}>View</button>
+                        <button id={collectionData.collections[i].id} name={collectionData.collections[i].title} className="btn btn-info" onClick={this.displaySpecificCollection}>View</button>
                     </div>
                 </div>
             );
@@ -73,7 +78,6 @@ export default class CollectionContainer extends Component {
     }
 
     displaySpecificCollection = (e) => {
-        console.log(e.target.id);
         //TODO: diplay the collection using the target's ID 'e.target.id' or whatever
         //Basically switch out the view all collections to a view specific collection
 
@@ -84,7 +88,8 @@ export default class CollectionContainer extends Component {
         this.setState({
             view: 'specific',
             specificPage: {
-                id: e.target.id
+                id: e.target.id,
+                title: e.target.name
             }
         });
     }
@@ -120,30 +125,40 @@ export default class CollectionContainer extends Component {
 
         if (view === 'view') {
             page =
-            <div className="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div className="row">
-                    <h1>Collections</h1>
+            <React.Fragment>
+                <div className="col-md-12">
+                    <div className="text-center">
+                        <h1>Collections</h1>
+                    </div>
+                    <div className="container text-center" >
+                        <h3>Create new Collection</h3>
+                        <br />
+                        <button className={`btn btn-primary text-center`} onClick={this.displayCreateSection}>Create</button>
+                        <br /><br /><br />
+                    </div>
+                    <div className="row">
+                        {collectionData === null ? this.displayDefaultSection() : this.displayAllCollections()}
+                    </div>
                 </div>
-                <div className="row">
-                    <h2>Create new Collection</h2>
-                    <br />
-                    <button className={`btn btn-primary`} onClick={this.displayCreateSection}>Create</button>
-                </div>
-                <div className="row">
-                    {collectionData === null ? this.displayDefaultSection() : this.displayAllCollections()}
-                </div>
-            </div>;
+            </React.Fragment>;
         }else if(view ==='create') {
             page =
-            <div style={{marginLeft: "5%"}}>
-                <div className="row">
+            <div className="row col-md-12">
+                <div className="col-md-9">
                     <button className="btn btn-secondary" onClick={this.displayViewSection}>GoBack</button>
+                    <br />
+                    <CreateCollectionPage />
                 </div>
-                <CreateCollectionPage width="100em" />
-            </div>
+            </div>;
         }else if (view==='specific') {
             page =
-            <SpecificCollectionContainer id={this.state.specificPage.id} />;
+            <div className="row col-md-12">
+                <div className="col-md-9">
+                    <button className="btn btn-secondary" onClick={this.displayViewSection}>GoBack</button>
+                    <br />
+                    <SpecificCollectionContainer id={this.state.specificPage.id} title={this.state.specificPage.title} />
+                </div>
+            </div>;
         }
 
         return page
