@@ -10,20 +10,25 @@ namespace Compendium.Admin.WebApi.Controllers
 {
     public class ItemController : ControllerBase
     {
-        ItemManager manager = new ItemManager();
+        ItemManager manager;
 
-        [Route("api/GetItemById/{$id}")]
-        public IActionResult GetItemById(Guid id)
+        ItemController(ItemManager itemManager)
         {
-            manager.GetItemById(id);
-
-            return Ok();
+            manager = itemManager;
         }
 
         [Route("api/GetAllItems/")]
         public IActionResult GetAllItems()
         {
             manager.GetAllItems();
+
+            return Ok();
+        }
+
+        [Route("api/GetItemById/{$id}")]
+        public IActionResult GetItemById(Guid id)
+        {
+            manager.GetItemById(id);
 
             return Ok();
         }

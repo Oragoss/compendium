@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Compendium.Admin.WebApi.Interfaces;
-using Compendium.Admin.WebApi.Models;
+using System.Text;
 
-namespace Compendium.Admin.WebApi.Managers
+namespace Compendium.Admin.WebApi
 {
-    public class MetaDataManager: IMetaData
+    class MetaDataManager
     {
-        public List<MetaData> GetMetaDataById()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

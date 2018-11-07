@@ -8,7 +8,17 @@ export default class SpecificCollectionContainer extends Component {
     }
 
     componentDidMount() {
-        //TODO: fetch data about this collection and pass in this.props.id
+        fetch('api/GetItemById', {method: 'get', credentials: 'include'})
+        .then((response) => {
+            if(!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response;
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            console.log(data);
+        });
     }
 
     card = (param) => {

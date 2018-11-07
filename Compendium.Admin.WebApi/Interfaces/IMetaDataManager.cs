@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Compendium.BusinessLogic.Interfaces
+namespace Compendium.Admin.WebApi.Interfaces
 {
     interface IMetaDataManager
     {

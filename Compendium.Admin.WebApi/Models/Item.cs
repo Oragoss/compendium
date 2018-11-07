@@ -1,4 +1,11 @@
-﻿namespace Compendium.Admin.WebApi.Models
+﻿using System;
+using MongoDB;
+using MongoDB.Bson;
+using MongoDB.Bson.IO;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace Compendium.Admin.WebApi.Models
 {
     public class Item
     {

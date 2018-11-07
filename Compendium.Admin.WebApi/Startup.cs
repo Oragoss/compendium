@@ -12,14 +12,19 @@ using Microsoft.EntityFrameworkCore;
 using Compendium.Admin.WebApi.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Compendium.Admin.WebApi.Models;
 
 namespace Compendium.Admin.WebApi
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            using (var client = new ItemContext())
+            {
+                client.Database.EnsureCreated();
+            }
         }
 
         public IConfiguration Configuration { get; }
@@ -34,13 +39,26 @@ namespace Compendium.Admin.WebApi
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddEntityFrameworkSqlite().AddDbContext<ItemContext>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddCors(options => {
+                options.AddPolicy("CorsPolicy", builder => builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //services.Configure<MongoSettings>(options => {
+            //    options.ConnectionString.
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Compendium.BusinessLogic
+namespace Compendium.Data
 {
-    class MetaDataManager
+    class SqlLiteConnect
     {
     }
 }
