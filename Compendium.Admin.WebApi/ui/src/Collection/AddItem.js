@@ -1,8 +1,7 @@
 import React from 'react';
 import CollectionContext from './CollectionContext';
 import SelectComponent from '../Shared/SelectComponent.js';
-
-{/*created , creator , date , dateAccepted , dateCopyrighted , dateSubmitted , description , educationLevel , extent , format , hasFormat , hasPart , hasVersion , identifier , instructionalMethod , isFormatOf , isPartOf , isReferencedBy , isReplacedBy , isRequiredBy , issued , isVersionOf , language , license , mediator , medium , modified , provenance , publisher , references , relation , replaces , requires , rights , rightsHolder , source , spatial , subject , tableOfContents , temporal , title , type , valid */} // eslint-disable-line no-lone-blocks
+import ReactQuill from 'react-quill';
 
 let typeOptions = [
     { value: 'Collection', label: 'Collection' },
@@ -31,8 +30,7 @@ const AddItem = (props) => {
                         <div className="form-group col-md-6 col-xs-12">
                             <img className="card-img-top" src="./images/book-stack.svg" style={{
                                     width: "15%",
-                                    marginLeft:"42.5%",
-                                    // marginTop: "2em"
+                                    marginLeft:"42.5%"
                                 }} alt="Card cap"
                             />
                             <div className="form-group col-md-6 col-xs-12">
@@ -51,7 +49,7 @@ const AddItem = (props) => {
                     </div>
                     <div className="row">
                         <label>Description</label>
-                        <input className="form-control" type="textbox" />
+                        <ReactQuill />
                     </div>
                     <div className="row">
                         <label>Valid</label>
@@ -67,7 +65,7 @@ const AddItem = (props) => {
                     </div>
                     <div className="row">
                         <label>Coverage</label>
-                        <input className="form-control" type="textbox" />
+                        <textarea className="form-control tinyMCETextArea" type="textarea" />
                     </div>
                     <div className="row">
                         <label>Date</label>
@@ -96,7 +94,7 @@ const AddItem = (props) => {
                     </div>
                     <div className="row">
                         <label>Rights</label>
-                        <input className="form-control" type="textbox" />
+                        <textarea className="form-control tinyMCETextArea" type="textarea" />
                     </div>
                     <div className="row">
                         <label>Source</label>
@@ -104,7 +102,7 @@ const AddItem = (props) => {
                     </div>
                     <div className="row">
                         <label>Abstract</label>
-                        <input className="form-control" type="textbox" />
+                        <textarea className="form-control tinyMCETextArea" type="textarea" />
                     </div>
                     <div className="row">
                         <label>Access Rights</label>
@@ -124,7 +122,7 @@ const AddItem = (props) => {
                     </div>
                     <div className="row">
                         <label>Audience</label>
-                        <input className="form-control" type="textbox" />
+                        <input className="form-control tinyMCETextArea" type="textarea" />
                     </div>
                     <div className="row">
                         <label>Available</label>
@@ -224,7 +222,7 @@ const AddItem = (props) => {
                     </div>
                     <div className="row">
                         <label>License</label>
-                        <input className="form-control" type="textbox" />
+                        <input className="form-control tinyMCETextArea" type="textarea" />
                     </div>
                     <div className="row">
                         <label>Mediator</label>
@@ -245,7 +243,7 @@ const AddItem = (props) => {
                     <div className="row">
                     {/* Select Component? */}
                         <label>References</label>
-                        <input className="form-control" type="textbox" />
+                        <input className="form-control tinyMCETextArea" type="textarea" />
                     </div>
                     <div className="row">
                         <label>Replaces</label>
@@ -264,8 +262,8 @@ const AddItem = (props) => {
                         <input className="form-control" type="text" />
                     </div>
                     <div className="row">
-                        <label>Tabel Of Contents</label>
-                        <input className="form-control" type="textbox" />
+                        <label>Table Of Contents</label>
+                        <textarea className="form-control tinyMCETextArea" type="textarea" />
                     </div>
                     <div className="row">
                         <label>Temporal</label>

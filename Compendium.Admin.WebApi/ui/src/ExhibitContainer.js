@@ -25,7 +25,6 @@ export default class ExhibitContainer extends Component {
             <ExhibitContext.Provider value = {
                 this.state
             }>
-            <Layout>
                 <div className="container">
                     <div className="row">
                         <h1>My Exhibits</h1>
@@ -35,7 +34,6 @@ export default class ExhibitContainer extends Component {
                             <Card src="./images/stock-img.svg" title="View Viliage Exhibit" description="View The City of the Village exhibit" buttonText="View" buttonType="primary" />
                         </div>
                 </div>
-            </Layout>
             </ExhibitContext.Provider>
         );
     }

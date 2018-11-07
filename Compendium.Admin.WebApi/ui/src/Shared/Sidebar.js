@@ -13,7 +13,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link" href="">
                     <span data-feather="file"></span>
                         Tags
                     </a>
@@ -31,7 +31,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link" href="">
                     <span data-feather="users"></span>
                         Users
                     </a>
@@ -43,7 +43,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link" href="">
                     <span data-feather="layers"></span>
                         Theme
                     </a>
