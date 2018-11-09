@@ -1,0 +1,16 @@
+Reference: 
+https://docs.microsoft.com/en-us/ef/core/get-started/netcore/new-db-sqlite
+https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet#dotnet-ef-database-update
+
+To create a new migration:
+dotnet ef migrations add <NAME-OF-Migration> --context <NAME-OF-Context>
+
+To apply new migrations:
+dotnet ef database update --context <NAME-OF-Context>
+
+To upgrade existing tables with a migration:
+todo
+look at this https://github.com/aspnet/Microsoft.Data.Sqlite/issues/219
+
+Show available contexts:
+dotnet ef dbcontext list

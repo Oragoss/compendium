@@ -22,4 +22,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+
 </Project>

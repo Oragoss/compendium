@@ -21,10 +21,10 @@ namespace Compendium.Admin.WebApi
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
-            using (var client = new ItemContext())
-            {
-                client.Database.EnsureCreated();
-            }
+            //using (var client = new ItemContext())
+            //{
+            //    client.Database.EnsureCreated();
+            //}
         }
 
         public IConfiguration Configuration { get; }
@@ -44,6 +44,9 @@ namespace Compendium.Admin.WebApi
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ItemContext>(options =>
+                options.UseSqlite(
+                    Configuration.GetConnectionString("CompendiumConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -55,10 +58,6 @@ namespace Compendium.Admin.WebApi
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            //services.Configure<MongoSettings>(options => {
-            //    options.ConnectionString.
-            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

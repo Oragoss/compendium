@@ -141,10 +141,6 @@ const AddItem = (props) => {
                         <input className="form-control" type="text" />
                     </div>
                     <div className="row">
-                        <label>Date</label>
-                        <input className="form-control" type="date" />
-                    </div>
-                    <div className="row">
                         <label>Date Accepted</label>
                         <input className="form-control" type="date" />
                     </div>
@@ -162,10 +158,6 @@ const AddItem = (props) => {
                     </div>
                     <div className="row">
                         <label>Extent</label>
-                        <input className="form-control" type="text" />
-                    </div>
-                    <div className="row">
-                        <label>Format</label>
                         <input className="form-control" type="text" />
                     </div>
                     <div className="row">
@@ -210,14 +202,6 @@ const AddItem = (props) => {
                     </div>
                     <div className="row">
                         <label>Is Version Of</label>
-                        <input className="form-control" type="text" />
-                    </div>
-                    <div className="row">
-                        <label>Language</label>
-                        <input className="form-control" type="text" />
-                    </div>
-                    <div className="row">
-                        <label>Created</label>
                         <input className="form-control" type="text" />
                     </div>
                     <div className="row">

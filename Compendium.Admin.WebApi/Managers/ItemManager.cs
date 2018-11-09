@@ -24,9 +24,8 @@ namespace Compendium.Admin.WebApi.Managers
         {
             var item = new Item();
             item.Id = 12345;
-            item.Name = "Book of some kind";
-            item.ShortDescription = "Short";
-            item.LongDescription = "long";
+            item.Title = "Book of some kind";
+            item.Description = "Short description";
             item.IsPublic = true;
 
             //var thing = from Item

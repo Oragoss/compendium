@@ -8,9 +8,14 @@ namespace Compendium.Admin.WebApi.Data
     {
         public DbSet<Item> Items { get; set; }
 
+        public ItemContext(DbContextOptions<ItemContext> options)
+           : base(options)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=compendium.db");
+            optionsBuilder.UseSqlite(@"Data Source=~/compendium.db");
         }
 
 

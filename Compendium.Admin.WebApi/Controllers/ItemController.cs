@@ -17,7 +17,7 @@ namespace Compendium.Admin.WebApi.Controllers
             manager = itemManager;
         }
 
-        [Route("api/GetAllItems/")]
+        //[Route("api/GetAllItems/")]
         public IActionResult GetAllItems()
         {
             manager.GetAllItems();
