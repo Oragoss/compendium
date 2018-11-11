@@ -23,8 +23,12 @@ class ItemController {
         //     if (err) console.error(err); //TODO: Replace this with a logger
         //     console.log("Data:", data);
         // });
+        const book = {
+            Title: 'Zildjian',
+            Description: "A foreign book.",
+        }
 
-        
+        ItemService.addItem(book);
         ctx.body  = "Check the console!";
     }
 }

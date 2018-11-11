@@ -4,8 +4,8 @@ class ItemService {
     static async addItem(item) {
         const book = new Item({
             ItemBody:{
-                Title: item.Title || 'Zildjian',
-                Description: item.Description || "A foreign book.",
+                Title: item.Title || 'NO BOOK TITLE',
+                Description: item.Description || "NO DESCRIPTION",
             }
         });
         book.save(function (err, data) {
