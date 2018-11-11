@@ -1,5 +1,7 @@
 'use strict'
 const Item = require("../models/Item");
+const ItemService = require("../services/ItemService");
+
 //Error: get `/`: `middleware` must be a function, not `undefined`
 //This means that somewhere in the pipeline, there is an incomplete response or incomplete part of the abstraction.
 class ItemController {
@@ -10,12 +12,19 @@ class ItemController {
         ctx.body  = "Hello From ItemController!";
     }
 
-    static async add(ctx) {
-        const book = new Item({
-            Title: 'Zildjian',
-            Description: "A foreign book."
-        });
-        book.save().then(() => console.log(book.Title + " : " + book.Description));
+    static async addItem(ctx) {
+        // const book = new Item({
+        //     ItemBody:{
+        //         Title: 'Zildjian',
+        //         Description: "A foreign book.",
+        //     }
+        // });
+        // book.save(function (err, data) {
+        //     if (err) console.error(err); //TODO: Replace this with a logger
+        //     console.log("Data:", data);
+        // });
+
+        
         ctx.body  = "Check the console!";
     }
 }
