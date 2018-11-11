@@ -13,16 +13,7 @@ class ItemController {
     }
 
     static async addItem(ctx) {
-        // const book = new Item({
-        //     ItemBody:{
-        //         Title: 'Zildjian',
-        //         Description: "A foreign book.",
-        //     }
-        // });
-        // book.save(function (err, data) {
-        //     if (err) console.error(err); //TODO: Replace this with a logger
-        //     console.log("Data:", data);
-        // });
+        //TODO: obviously change this to be the ctx.request.Title, ctx.request.Description etc.
         const book = {
             Title: 'Zildjian',
             Description: "A foreign book.",
