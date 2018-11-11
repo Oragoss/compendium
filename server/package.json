@@ -1,0 +1,29 @@
+{
+  "name": "compendium-server",
+  "version": "1.0.0",
+  "description": "Server backend for compendium",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "Koa",
+    "Node"
+  ],
+  "author": "Oragoss",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "koa": "^2.6.2",
+    "koa-body": "^4.0.4",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.10.0",
+    "koa-static": "^5.0.0",
+    "mongoose": "^5.3.11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
