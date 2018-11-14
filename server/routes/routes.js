@@ -2,13 +2,17 @@
 
 const router = require('koa-router')(); // router middleware for koa
 
-const ItemController = require('../controllers/ItemController');
+const CollectionController = require('../controllers/CollectionController');
 
-router.get( '/api/item', ItemController.index);
-router.get( '/api/addItem', ItemController.addItem);
+router.get('/api/collection', CollectionController.index);
+router.get('/api/collection/getItem', CollectionController.getItem);
+router.post('/api/collection/addItem', CollectionController.addItem);
+router.post('/api/collection/updateItem', CollectionController.updateItem);
+router.post('/api/collection/addCollection', CollectionController.addCollection);
 
-// router.post('/contact', www.processContact); // process contact request
 
+router.get( '/api/bodyTest', CollectionController.getBodyTest);
+router.get( '/api/postBodyTest', CollectionController.postBodyTest);
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 

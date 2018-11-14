@@ -1,8 +1,12 @@
-const Item = require("../models/Item");
+const Collection = require("../models/Collection");
 
 class ItemService {
+
+    static async getCollection(id) {
+
+    }
     static async addItem(item) {
-        const book = new Item({
+        const book = new Collection({
             ItemBody:{
                 Title: item.Title || 'NO BOOK TITLE',
                 Description: item.Description || "NO DESCRIPTION",
@@ -12,6 +16,14 @@ class ItemService {
             if (err) console.error(err); //TODO: Replace this with a logger
             console.log("Data:", data);
         });
+    }
+
+    static async getItem(id) {
+
+    }
+
+    static async addCollection(collection) {
+
     }
 }
 
