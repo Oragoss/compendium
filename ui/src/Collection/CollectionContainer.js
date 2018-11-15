@@ -48,8 +48,27 @@ export default class CollectionContainer extends Component {
         });
     }
 
+    postNewItem = () => {
+        console.log("Post New Item Clicked");
+
+        //TODO: START HERE: Post the data to the server
+        // fetch('/api/collection/addItem')
+    }
+
+    updateItem = () => {
+        console.log("Update Item Clicked");
+    }
+
+    postNewCollection = () => {
+        console.log("Post New Collection Clicked");
+    }
+
+    updateNewCollection = () => {
+        console.log("Update Collection Clicked");
+    }
+
     //TODO: Turn this into displayAllCollections
-    displayAllCollections() {
+    displayAllCollections = () => {
         let rows = []
         let {collectionData} = this.state;
 
@@ -112,6 +131,7 @@ export default class CollectionContainer extends Component {
             view: 'create'
         });
     }
+
     displayViewSection = () => {
         this.setState({
             view: 'view'
@@ -174,7 +194,10 @@ export default class CollectionContainer extends Component {
                     displayViewSection: this.displayViewSection,
                     displaySpecificCollection: this.displaySpecificCollection,
                     displayAllCollections: this.displayAllCollections,
-
+                    postNewItem: this.postNewItem,
+                    updateItem: this.updateItem,
+                    postNewCollection: this.postNewCollection,
+                    updateNewCollection: this.updateNewCollection
                 }
             }}>
                 {this.pageSetup()}

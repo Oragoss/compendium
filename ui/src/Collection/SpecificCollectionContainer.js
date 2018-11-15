@@ -8,17 +8,17 @@ export default class SpecificCollectionContainer extends Component {
     }
 
     componentDidMount() {
-        fetch('api/GetItemById', {method: 'get', credentials: 'include'})
-        .then((response) => {
-            if(!response.ok) {
-                throw Error(response.statusText);
-            }
-            return response;
-        })
-        .then((resp) => resp.json())
-        .then((data) => {
-            console.log(data);
-        });
+        // fetch('api/GetItemById', {method: 'get', credentials: 'include'})
+        // .then((response) => {
+        //     if(!response.ok) {
+        //         throw Error(response.statusText);
+        //     }
+        //     return response;
+        // })
+        // .then((resp) => resp.json())
+        // .then((data) => {
+        //     console.log(data);
+        // });
     }
 
     card = (param) => {

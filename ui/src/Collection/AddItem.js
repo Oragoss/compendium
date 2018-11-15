@@ -254,7 +254,7 @@ const AddItem = (props) => {
                         <input className="form-control" type="text" />
                     </div>
                     <br />
-                    <button className="btn btn-success">Add</button>
+                    <button className="btn btn-success" onClick={actions.postNewItem}>Add</button>
                 </React.Fragment>
             )}
         </CollectionContext.Consumer>
