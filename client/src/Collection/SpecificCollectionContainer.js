@@ -150,7 +150,7 @@ export default class SpecificCollectionContainer extends Component {
     postNewItem = () => {
         console.log("Post New Item Clicked");
 
-        fetch('localhost:4000/api/collection/addItem', {
+        fetch('http://localhost:4000/api/collection/addItem', {
             method: 'post',
             body: JSON.stringify(this.state)
         }).then((response) => {

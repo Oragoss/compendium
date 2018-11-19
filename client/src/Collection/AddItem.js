@@ -64,7 +64,7 @@ const AddItem = (props) => {
                     </div>
                     <div className="row">
                         <label>Contributers</label>
-                        <input name="contributer" value={state.contributer} onChange={actions.handleItemChange} className="form-control" type="text" />
+                        <input name="contributers" value={state.contributer} onChange={actions.handleItemChange} className="form-control" type="text" />
                     </div>
                     <div className="row">
                         <label>Coverage</label>
