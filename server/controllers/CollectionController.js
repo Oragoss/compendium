@@ -21,13 +21,15 @@ class ItemController {
         //TODO: Add the item
 
         //TODO: obviously change this to be the ctx.request.Title, ctx.request.Description etc.
-        const book = {
-            Title: 'Zildjian',
-            Description: "A foreign book.",
-        }
+        // const book = {
+        //     Title: 'Zildjian',
+        //     Description: "A foreign book.",
+        // }
 
-        CollectionService.addItem(book);
-        context.body  = "Check the console!";
+        // CollectionService.addItem(book);
+        context.body  = context.request.body;
+        console.log('Made it!');
+        console.log(context.body);
     }
 
     static async updateItem(context) {
