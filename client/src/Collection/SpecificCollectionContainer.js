@@ -6,8 +6,8 @@ export default class SpecificCollectionContainer extends Component {
     state = {
         view: "default",
         itemType: "",
-        id: "",
-        type: "",
+        id: null,
+        containerType: "",
         title: "",
         subject: "",
         type: "",
@@ -61,10 +61,12 @@ export default class SpecificCollectionContainer extends Component {
         rightsHolder: "",
         spatial: "",
         tableOfContents: "",
-        temporal: ""
+        temporal: "",
+        collectionID: null
     }
 
     componentDidMount() {
+        this.setState({collectionID: this.props.id})
         // fetch('localhost:4000/api/collection/getItem', {method: 'get', credentials: 'include'})
         // .then((response) => {
         //     if(!response.ok) {
@@ -141,9 +143,6 @@ export default class SpecificCollectionContainer extends Component {
     }
 
     handleItemChange = (e) => {
-        console.log("Event name:", e.target.name);
-        console.log("Event value:", e.target.value);
-
         this.setState({[e.target.name] : e.target.value});
     }
 
@@ -181,7 +180,7 @@ export default class SpecificCollectionContainer extends Component {
                 <div className="card-body text-center">
                     <h5 className="card-title">{param.title}</h5>
                     <p className="card-text">{param.description}</p>
-                    <button onClick={this.changeViewToAddItemPage} id={param.type} className={`btn btn-${param.buttonType}`}>{param.buttonText}</button>
+                    <button onClick={this.changeViewToAddItemPage} id={param.containerType} className={`btn btn-${param.buttonType}`}>{param.buttonText}</button>
                 </div>
             </div>
         );
@@ -205,9 +204,9 @@ export default class SpecificCollectionContainer extends Component {
                     />
                     <br /><br />
                     <div className="row">
-                        {this.card({type: "photo", src: "./images/stock-img.svg", title:"Add new photo", description:"Add a new photo to a new or existing collection", buttonText:"+Add", buttonType:"primary"})}
-                        {this.card({type: "book", src: "./images/book-orange.svg", title:"Add new book", description:"Add a new book to a new or existing collection", buttonText:"+Add", buttonType:"primary"})}
-                        {this.card({type: "document", src: "./images/blank-document.svg", title:"Add new file", description:"Add a new html, txt, pdf, or other file to a new or existing collection", buttonText:"+Add", buttonType:"primary"})}
+                        {this.card({containerType: "photo", src: "./images/stock-img.svg", title:"Add new photo", description:"Add a new photo to a new or existing collection", buttonText:"+Add", buttonType:"primary"})}
+                        {this.card({containerType: "book", src: "./images/book-orange.svg", title:"Add new book", description:"Add a new book to a new or existing collection", buttonText:"+Add", buttonType:"primary"})}
+                        {this.card({containerType: "document", src: "./images/blank-document.svg", title:"Add new file", description:"Add a new html, txt, pdf, or other file to a new or existing collection", buttonText:"+Add", buttonType:"primary"})}
                     </div>
                 </React.Fragment>;
         }

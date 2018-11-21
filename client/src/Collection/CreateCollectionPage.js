@@ -19,7 +19,6 @@ const CreateCollectionPage = (props) => {
         { value: 'Text', label: 'Text' }
     ];
     return (
-        // React Context.Consumer?
         <CollectionContext.Consumer>
             {({state, actions}) => (
                 <div className="col-md-12 col-xs-12" style={{width: props.width}}>
@@ -38,9 +37,9 @@ const CreateCollectionPage = (props) => {
                         </div>
                         <div className="row col-md-3 col-xs-12">
                             <label>Title</label>
-                            <input className="form-control" type="text" />
+                            <input name="title" value={state.title} onChange={actions.handleItemChange} className="form-control" type="text" />
                             <label>Subject</label>
-                            <input className="form-control" type="text" />
+                            <input name="subject" value={state.subject} onChange={actions.handleItemChange} className="form-control" type="text" />
                             <label>Type</label>
                             <SelectComponent
                                 options={options}
@@ -49,52 +48,52 @@ const CreateCollectionPage = (props) => {
                     </div>
                     <div className="row">
                         <label>Description</label>
-                        <input className="form-control" type="textbox" />
+                        <input name="description" value={state.description} onChange={actions.handleItemChange} className="form-control" type="textbox" />
                     </div>
                     <div className="row">
                         <label>Creator</label>
-                        <input className="form-control" type="text" />
+                        <input name="creator" value={state.creator} onChange={actions.handleItemChange} className="form-control" type="text" />
                     </div>
                     <div className="row">
                         <label>Contributers</label>
-                        <input className="form-control" type="text" />
+                        <input name="contributers" value={state.contributers} onChange={actions.handleItemChange} className="form-control" type="text" />
                     </div>
                     <div className="row">
                         <label>Coverage</label>
-                        <input className="form-control" type="textbox" />
+                        <input name="coverage" value={state.coverage} onChange={actions.handleItemChange} className="form-control" type="textbox" />
                     </div>
                     <div className="row">
                         <label>Date</label>
-                        <input className="form-control" type="date" />
+                        <input name="date" value={state.date} onChange={actions.handleItemChange} className="form-control" type="date" />
                     </div>
                     <div className="row">
                         <label>Format</label>
-                        <input className="form-control" type="text" />
+                        <input name="format" value={state.format} onChange={actions.handleItemChange} className="form-control" type="text" />
                     </div>
                     <div className="row">
                         <label>Identifier</label>
-                        <input className="form-control" type="text" />
+                        <input name="identifier" value={state.identifier} onChange={actions.handleItemChange} className="form-control" type="text" />
                     </div>
                     <div className="row">
                         <label>Language</label>
-                        <input className="form-control" type="text" />
+                        <input name="language" value={state.language} onChange={actions.handleItemChange} className="form-control" type="text" />
                     </div>
                     <div className="row">
                         <label>Publisher</label>
-                        <input className="form-control" type="text" />
+                        <input name="publisher" value={state.publisher} onChange={actions.handleItemChange} className="form-control" type="text" />
                     </div>
                     <div className="row">
                         <label>Relation</label>
                         {/* Is this a React Select component? */}
-                        <input className="form-control" type="text" />
+                        <input name="relation" value={state.relation} onChange={actions.handleItemChange} className="form-control" type="text" />
                     </div>
                     <div className="row">
                         <label>Rights</label>
-                        <input className="form-control" type="textbox" />
+                        <input name="contributers" value={state.rights} onChange={actions.handleItemChange} className="form-control" type="textbox" />
                     </div>
                     <div className="row">
                         <label>Source</label>
-                        <input className="form-control" type="text" />
+                        <input name="source" value={state.source} onChange={actions.handleItemChange} className="form-control" type="text" />
                     </div>
                     <br />
                     <button className="btn btn-success" onClick={actions.postNewCollection}>Create</button>

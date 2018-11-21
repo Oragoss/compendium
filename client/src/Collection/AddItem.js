@@ -25,7 +25,7 @@ const AddItem = (props) => {
         <SpecificCollectionContext.Consumer>
             {({state, actions}) => (
                 <React.Fragment>
-                    <h1>Add new {props.type}</h1>
+                    <h1>Add new {props.containerType}</h1>
                     <div className="row">
                         <div className="form-group col-md-6 col-xs-12">
                             <img className="card-img-top" src="./images/book-stack.svg" style={{

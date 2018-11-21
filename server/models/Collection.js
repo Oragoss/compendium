@@ -43,7 +43,7 @@ const Collection = db.define('collection', {
   },
   source: {
       type: Sequelize.STRING
-  },
+  }
 });
 
 module.exports = Collection;

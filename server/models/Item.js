@@ -163,6 +163,9 @@ const Item = db.define('item', {
     },
     temporal: {
         type: Sequelize.STRING
+    },
+    collectionID: {
+        type: Sequelize.INTEGER
     }
 });
 

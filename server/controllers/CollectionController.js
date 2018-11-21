@@ -13,7 +13,8 @@ class CollectionController {
     }
 
     static async addCollection(context) {
-
+        context.body = context.request.body;
+        CollectionService.addCollection(context.body);
     }
 
     static async updateCollection(context) {

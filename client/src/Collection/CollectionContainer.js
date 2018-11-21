@@ -6,7 +6,25 @@ import SpecificCollectionContainer from './SpecificCollectionContainer';
 export default class CollectionContainer extends Component {
     state = {
         collectionData: null,
-        view: 'view'
+        view: 'view',
+        id: null,
+        containerType: "",
+        title: "",
+        subject: "",
+        type: "",
+        description: "",
+        valid: true,
+        creator: "",
+        contributers: "",
+        coverage:"",
+        date: new Date(),
+        format: "",
+        identifier: "",
+        language: "",
+        publisher: "",
+        relation: "",
+        rights: "",
+        source: ""
     }
 
     componentDidMount() {
@@ -15,19 +33,19 @@ export default class CollectionContainer extends Component {
 
         let fakeData = {
             collections: [{
-                id: 123,
+                id: 1,
                 title: "Chickasaw Photo Collection",
                 imageSource: "./images/stock-img-album.svg",
                 description: "View the Chickasaw Nation photo collection",
             },
             {
-                id: 321,
+                id: 2,
                 title: "Chickasaw Book Collection",
                 imageSource: "./images/book-stack.svg",
                 description: "View the Chickasaw Nation book collection",
             },
             {
-                id: 321,
+                id: 3,
                 title: "The Village Library Book Collection",
                 imageSource: "./images/book-stack.svg",
                 description: "View the Village Library book collection",
@@ -43,12 +61,16 @@ export default class CollectionContainer extends Component {
         });
     }
 
+    handleCollectionChange = (e) => {
+        this.setState({[e.target.name] : e.target.value});
+    }
+
     postNewCollection = () => {
         console.log("Post New Collection Clicked");
 
-        fetch('localhost:4000/api/collection/addItem', {
+        fetch('http://localhost:4000/api/collection/addCollection', {
             method: 'post',
-            body: JSON.stringify(this.state.specificPage)
+            body: JSON.stringify(this.state)
         }).then((response) => {
             if(!response.ok) {
                 throw Error(response.statusText);
@@ -180,7 +202,7 @@ export default class CollectionContainer extends Component {
             </div>;
         }
 
-        return page
+        return page;
     }
 
     render() {
@@ -196,7 +218,8 @@ export default class CollectionContainer extends Component {
                     postNewItem: this.postNewItem,
                     updateItem: this.updateItem,
                     postNewCollection: this.postNewCollection,
-                    updateNewCollection: this.updateNewCollection
+                    updateNewCollection: this.updateNewCollection,
+                    handleCollectionChange: this.handleCollectionChange
                 }
             }}>
                 {this.pageSetup()}

@@ -1,4 +1,3 @@
-const db = require('../db/dbConnection');
 const Item = require('../models/Item');
 const Collection = require('../models/Collection');
 
@@ -61,12 +60,11 @@ class ItemService {
                 rightsHolder: jData.rightsHolder,
                 spatial: jData.spatial,
                 tableOfContents: jData.tableOfContents,
-                temporal: jData.temporal
+                temporal: jData.temporal,
+                collectionID: jData.collectionID
             });
+            Item.belongsTo(Collection, {foreignKey: 'collectionID'});
         });
-
-        //TODO: Fix this foreign key
-        //Item.belongsTo(Collection.whatever)
     }
 
     static async findItem(id) {
