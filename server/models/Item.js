@@ -1,3 +1,4 @@
+const Sequelize = require('sequelize');
 const db = require('../db/dbConnection');
 
 const Item = db.define('item', {
@@ -163,6 +164,6 @@ const Item = db.define('item', {
     temporal: {
         type: Sequelize.STRING
     }
-  });
+});
 
-  module.exports = Item;
+module.exports = Item;

@@ -1,28 +1,49 @@
-// const mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost:27017/Compendium', {useNewUrlParser: true});
-
-// // const AddCollection = (name, data) => {
-//     //TODO: Try to parameterize this
-//     const Collection = mongoose.model('Item', {
-//         Id: String,
-//         ItemBody: {
-//             Title: String,
-//             Description: String
-//         }
-//     });
-// // }
-
-// module.exports = Collection;
-
+const Sequelize = require('sequelize');
 const db = require('../db/dbConnection');
 
-const Collection = db.define('item', {
-    firstName: {
-      type: Sequelize.STRING
+const Collection = db.define('collection', {
+  title: {
+    type: Sequelize.STRING
+  },
+  subject: {
+    type: Sequelize.STRING
+  },
+  type: {
+      type: Sequelize.JSON
     },
-    lastName: {
+  description: {
       type: Sequelize.STRING
-    }
-  });
+  },
+  creator: {
+      type: Sequelize.STRING
+  },
+  contributers: {
+      type: Sequelize.JSON
+  },
+  coverage: {
+      type: Sequelize.STRING
+  },
+  date: {
+      type: Sequelize.DATE
+  },
+  identifier: {
+      type: Sequelize.STRING
+  },
+  language: {
+      type: Sequelize.STRING
+  },
+  publisher: {
+      type: Sequelize.STRING
+  },
+  relation: {
+      type: Sequelize.STRING
+  },
+  rights: {
+      type: Sequelize.STRING
+  },
+  source: {
+      type: Sequelize.STRING
+  },
+});
 
-  module.exports = Collection;
+module.exports = Collection;

@@ -9,7 +9,9 @@ const sequelize = new Sequelize('Compendium', 'postgres', 'h@rl3qu1n', {
     min: 0,
     acquire: 30000,
     idle: 10000
-  }
+  },
+  sync: { force: true },
+
 });
 
 module.exports = sequelize;
