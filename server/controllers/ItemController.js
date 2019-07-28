@@ -1,5 +1,5 @@
 'use strict'
-const ItemService = require('../services/ItemService');
+import ItemService from '../services/ItemService';
 
 class ItemController {
     static async index(context) {

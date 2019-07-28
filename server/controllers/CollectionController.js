@@ -1,5 +1,5 @@
 'use strict'
-const CollectionService = require("../services/CollectionService");
+import CollectionService from '../services/CollectionService';
 
 //Error: get `/`: `middleware` must be a function, not `undefined`
 //This means that somewhere in the pipeline, there is an incomplete response or incomplete part of the abstraction.
