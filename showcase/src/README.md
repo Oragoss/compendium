@@ -1,1 +1,0 @@
-# This project is for the github pages showcase
