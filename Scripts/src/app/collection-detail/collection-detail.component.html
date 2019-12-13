@@ -1,0 +1,16 @@
+<div class="container">
+    <h1 class="text-center">Collection {{collection.Id}}: {{collection.Name}}</h1>
+    <div class="row" style="margin: 2.5% 0 0 0">
+        <img src="{{collection.ImagePath}}" alt="" style="width: 25em" />
+        <div class="col-md-4" *ngFor="let item of items">
+            <div class="card" style="width: 18rem;">
+                <img src="{{item.ImagePath}}" alt="" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">{{item.Name}}</h5>
+                    <p class="card-text">{{item.Description}}</p>
+                    <div class="btn btn-primary" (click)="onSelect(item)">Select</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

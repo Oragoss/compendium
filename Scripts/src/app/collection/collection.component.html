@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 class="text-center">Your Collections</h1>
+    <div class="row" style="margin: 2.5% 0 0 0;">
+        <div class="col-md-4 text-center" *ngFor="let collection of collections; let i = index">
+            <div class="card" style="width: 18rem;">
+                <img src="{{collection.ImagePath}}" alt="Card image cap" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">{{collection.Name}}</h5>
+                    <p class="card-text">{{collection.Description}}</p>
+                    <div class="btn btn-success" (click)="onSelect(collection)">Select</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
