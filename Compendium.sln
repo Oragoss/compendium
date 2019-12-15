@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WepApp", "WepApp\WepApp.csproj", "{3F996248-D18F-4FED-BB11-29873A7CFE2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WepApp", "WepApp\WepApp.csproj", "{3F996248-D18F-4FED-BB11-29873A7CFE2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompendiumData", "CompendiumData\CompendiumData.csproj", "{3735F70F-AF7B-435F-8EAC-BBF376C516C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{3C53F376-8C4E-44E9-994E-6B0AE3E65F24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{3F996248-D18F-4FED-BB11-29873A7CFE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F996248-D18F-4FED-BB11-29873A7CFE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F996248-D18F-4FED-BB11-29873A7CFE2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3735F70F-AF7B-435F-8EAC-BBF376C516C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3735F70F-AF7B-435F-8EAC-BBF376C516C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3735F70F-AF7B-435F-8EAC-BBF376C516C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3735F70F-AF7B-435F-8EAC-BBF376C516C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C53F376-8C4E-44E9-994E-6B0AE3E65F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C53F376-8C4E-44E9-994E-6B0AE3E65F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C53F376-8C4E-44E9-994E-6B0AE3E65F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C53F376-8C4E-44E9-994E-6B0AE3E65F24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,21 +11,24 @@ export class ItemService {
       CollectionId: 1,
       Name: 'Book',
       Description: 'Some Quick Example Text.',
-      ImagePath: '../../assets/images/blank-document.svg'
+      ImagePath: '../../assets/images/blank-document.svg',
+      CreationDate: new Date()
     },
     {
       Id: 2,
       CollectionId: 2,
       Name: 'SECOND BOOK',
       Description: 'Some MORE Quick Example Text.',
-      ImagePath: '../../assets/images/book-orange.svg'
+      ImagePath: '../../assets/images/book-orange.svg',
+      CreationDate: new Date()
     },
     {
       Id: 3,
       CollectionId: 3,
       Name: 'THIRD MOST IMPORTANT BOOK',
       Description: 'Some MORE Quick Example Text.',
-      ImagePath: '../../assets/images/book-red.svg'
+      ImagePath: '../../assets/images/book-red.svg',
+      CreationDate: new Date()
     }
   ];
 

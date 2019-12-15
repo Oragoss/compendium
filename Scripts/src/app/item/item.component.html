@@ -1,13 +1,45 @@
 <div class="container">
-    <h1 class="text-center">{{item.Name}}</h1>
     <div class="row" style="margin: 2.5% 0 0 0;">
-        <div class="col-md-4 text-center">
-            <div class="card" style="width: 18rem;">
-                <img src="{{item.ImagePath}}" alt="Card image cap" class="card-img-top" />
-                <div class="card-body">
-                    <h5 class="card-title">{{item.Name}}</h5>
-                    <p class="card-text">{{item.Description}}</p>
-                </div>
+        <div class="col-md-6">
+            <img src="{{item.ImagePath}}" alt="Card image cap" class="card-img-top" />
+        </div>
+        <div class="col-md-6">
+            <h1 class="text-center">{{item.Name}}</h1>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" aria-describedby="nameHelp" value={{item.Name}}>
+                <small id="nameHelp" class="form-text text-muted">The name or title of this item.</small>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" aria-describedby="descriptionHelp" value={{item.Description}}></textarea>
+                <small id="descriptionHelp" class="form-text text-muted">A description of this item.</small>
+            </div>
+            <div class="form-group">
+                <label for="dateCreated">Date Created:</label>
+                <input type="text" class="form-control" id="dateCreated" aria-describedby="dateCreatedHelp" value={{item.CreatedOn}}>
+                <small id="dateCreatedHelp" class="form-text text-muted">The date this item was created.</small>
+            </div>
+            <div class="form-group">
+                <label for="placeholder1">Placeholder:</label>
+                <input type="text" class="form-control" id="placeholder1" aria-describedby="placeholder1Help">
+                <small id="placeholder1Help" class="form-text text-muted">Think of something ot put here.</small>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 2.5% 0 0 0;">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="placeholder2">Placeholder:</label>
+                <input type="text" class="form-control" id="placeholder2" aria-describedby="placeholder2Help">
+                <small id="placeholder2Help" class="form-text text-muted">Think of something ot put here.</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="placeholder2">Placeholder:</label>
+                <input type="text" class="form-control" id="placeholder2" aria-describedby="placeholder2Help">
+                <small id="placeholder2Help" class="form-text text-muted">Think of something ot put here.</small>
             </div>
         </div>
     </div>
