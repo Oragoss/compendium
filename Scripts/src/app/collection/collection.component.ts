@@ -18,7 +18,10 @@ export class CollectionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.collections = this.collectionService.getCollections();
+    this.collectionService.getCollections()
+      .subscribe(data => {
+        this.collections = data
+      });
   }
 
   onSelect(collection: Collection) {

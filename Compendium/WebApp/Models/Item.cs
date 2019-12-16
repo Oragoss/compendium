@@ -1,19 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace CompendiumData.Models
+namespace WebApp.Models
 {
     public class Item
     {
-        /**
-         * Id: number;
-    CollectionId: number;
-    Name: string;
-    Description: string;
-    ImagePath: string;
-    CreatedOn: Date
-         */
         public int Id { get; set; }
         public int CollectionId { get; set; }
         public string Name { get; set; }

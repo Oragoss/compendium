@@ -24,7 +24,8 @@ export class CollectionDetailComponent implements OnInit {
 
   ngOnInit() {
     let collectionId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.collection = this.getCollection(collectionId);
+    this.getCollection(collectionId);
+
     this.items = this.getItems(collectionId);
   }
 
@@ -36,8 +37,10 @@ export class CollectionDetailComponent implements OnInit {
     return this.itemService.getItems(collectionId);
   }
 
-  getCollection(collectionId: number): Collection {
-    return this.collectionService.getCollection(collectionId);
+  getCollection(collectionId: number): void {
+    this.collectionService.getCollection(collectionId)
+      .subscribe(data => {
+        this.collection = data
+      });
   }
-
 }
