@@ -44,6 +44,7 @@ namespace WebApp
             //Add DI services here
             services.AddScoped<ICollectionService, CollectionService>();
 
+            //TODO: Move the data source string to the appsettings.json
             services.AddDbContext<CompendiumDbContext>(options => options.UseSqlite("Data Source=compendium.db"));
             services.AddControllers();
         }

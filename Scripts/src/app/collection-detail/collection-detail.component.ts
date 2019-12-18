@@ -11,7 +11,7 @@ import { ItemService } from '../shared/item.service';
   styleUrls: ['./collection-detail.component.css']
 })
 export class CollectionDetailComponent implements OnInit {
-
+  public collectionId: number;
   public collection: Collection;
   public items: Item[];
 
@@ -23,14 +23,18 @@ export class CollectionDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let collectionId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.getCollection(collectionId);
+    this.collectionId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.getCollection(this.collectionId);
 
-    this.items = this.getItems(collectionId);
+    this.items = this.getItems(this.collectionId);
   }
 
   onSelect(item: Item) {
     this.router.navigate([`/collection/${this.collection.Id}/item`, item.Id]);
+  }
+
+  navigateToNewPage() {
+    this.router.navigate([`/collection/${this.collectionId}/itemnew`]);
   }
 
   getItems(collectionId: number): Item[] {

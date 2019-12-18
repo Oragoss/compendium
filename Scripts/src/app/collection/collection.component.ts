@@ -29,8 +29,6 @@ export class CollectionComponent implements OnInit {
   }
 
   navigateToNewPage() {
-    //TODO: Move this to a collection-new component
-    // collection.DateCreated
     this.router.navigate(['/collectionnew']);
   }
 }

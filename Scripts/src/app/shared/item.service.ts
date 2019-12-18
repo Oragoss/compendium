@@ -42,4 +42,8 @@ export class ItemService {
     const offset = id-1;
     return this.fakeData[offset];
   }
+
+  postItem(item: Item) {
+    
+  }
 }

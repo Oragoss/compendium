@@ -9,8 +9,7 @@ import { CollectionService } from '../shared/collection.service';
 })
 export class CollectionNewComponent implements OnInit {
 
-  // public collection: Collection;
-  public name = 'Default Name';
+  public name = 'New Collection';
   public description = 'Default Description'
   public imagePath = '../assets/images/blank-document.svg'
 

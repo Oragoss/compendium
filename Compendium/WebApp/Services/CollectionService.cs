@@ -19,33 +19,10 @@ namespace WebApp.Services
 
         public string GetCollections()
         {
-            Collection collection = new Collection();
-            collection.Id = 1;
-            collection.Name = "Fakey Boy";
-            collection.Description = "Some Serious Text";
-            collection.ImagePath = "../../assets/images/book-stack.svg";
-            collection.CreationDate = DateTime.Now;
-            collection.LastModified = DateTime.Now;
+            var collections = context.Collections
+                .OrderBy(b => b.Id);
 
-            Collection collection2 = new Collection();
-            collection2.Id = 2;
-            collection2.Name = "Truthy Boy";
-            collection2.Description = "Some Funny Text";
-            collection2.ImagePath = "../../assets/images/file-drop.svg";
-            collection2.CreationDate = DateTime.Now;
-            collection2.LastModified = DateTime.Now;
-
-            Collection collection3 = new Collection();
-            collection3.Id = 3;
-            collection3.Name = "Not so Truthy Boy";
-            collection3.Description = "Text, neither serious nor funny";
-            collection3.ImagePath = "../../assets/images/notebook.svg";
-            collection3.CreationDate = DateTime.Now;
-            collection3.LastModified = DateTime.Now;
-
-            Collection[] b = { collection, collection2, collection3 };
-
-            return JsonConvert.SerializeObject(b);
+            return JsonConvert.SerializeObject(collections);
         }
 
         public string GetCollection(int id)
@@ -77,7 +54,14 @@ namespace WebApp.Services
 
         public void StoreCollection(Collection collection)
         {
-            throw new NotImplementedException();
+            //https://docs.microsoft.com/en-us/ef/core/get-started/?tabs=visual-studio
+            //throw new NotImplementedException();
+
+            using (context)
+            {
+                context.Add(collection);
+                context.SaveChanges();
+            }
         }
     }
 }
