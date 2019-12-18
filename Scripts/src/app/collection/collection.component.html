@@ -1,13 +1,18 @@
-<div class="container">
-    <h1 class="text-center">Your Collections</h1>
-    <div class="row">
-        <div class="col-md-4 text-center" *ngFor="let collection of collections; let i = index">
-            <div class="card" style="width: 18rem;">
-                <img src="{{collection.ImagePath}}" alt="Card image cap" class="card-img-top" />
-                <div class="card-body">
-                    <h5 class="card-title">{{collection.Name}}</h5>
-                    <p class="card-text">{{collection.Description}}</p>
-                    <div class="btn btn-success" (click)="onSelect(collection)">Select</div>
+<div class="container-fluid">
+    <div class="pull-right" style="float: right; margin-right: 5%;">
+        <button class="btn btn-success" (click)="navigateToNewPage()">New</button>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Your Collections</h1>
+        <div class="row">
+            <div class="col-md-4 text-center" *ngFor="let collection of collections; let i = index">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{collection.ImagePath}}" alt="Card image cap" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{collection.Name}}</h5>
+                        <p class="card-text">{{collection.Description}}</p>
+                        <div class="btn btn-success" (click)="onSelect(collection)">Select</div>
+                    </div>
                 </div>
             </div>
         </div>

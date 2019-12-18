@@ -1,0 +1,47 @@
+<div class="container">
+    <button class="btn btn primary" (click)="postNewCollection()">Submit</button>
+    <div class="row" style="margin: 2.5% 0 0 0;">
+        <div class="col-md-6">
+            <img src={{imagePath}} alt="Card image cap" class="card-img-top" [(ngModel)]="imagePath" ngDefaultControl />
+        </div>
+        <div class="col-md-6">
+            <h1 class="text-center">New Collection</h1>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" aria-describedby="nameHelp" [(ngModel)]="name" ngDefaultControl >
+                <small id="nameHelp" class="form-text text-muted">The name or title of this collection.</small>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" aria-describedby="descriptionHelp" [(ngModel)]="description" ngDefaultControl ></textarea>
+                <small id="descriptionHelp" class="form-text text-muted">A description of this collection.</small>
+            </div>
+            <!-- <div class="form-group">
+                <label for="dateCreated">Date Created:</label>
+                <input type="text" class="form-control" id="dateCreated" aria-describedby="dateCreatedHelp" value={{collection.CreationDate}}>
+                <small id="dateCreatedHelp" class="form-text text-muted">The date this collection was created.</small>
+            </div> -->
+            <div class="form-group">
+                <label for="placeholder1">Placeholder:</label>
+                <input type="text" class="form-control" id="placeholder1" aria-describedby="placeholder1Help">
+                <small id="placeholder1Help" class="form-text text-muted">Think of something ot put here.</small>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 2.5% 0 0 0;">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="placeholder2">Placeholder:</label>
+                <input type="text" class="form-control" id="placeholder2" aria-describedby="placeholder2Help">
+                <small id="placeholder2Help" class="form-text text-muted">Think of something ot put here.</small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="placeholder3">Placeholder:</label>
+                <input type="text" class="form-control" id="placeholder3" aria-describedby="placeholder3Help">
+                <small id="placeholder3Help" class="form-text text-muted">Think of something ot put here.</small>
+            </div>
+        </div>
+    </div>
+</div>

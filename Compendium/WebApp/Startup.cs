@@ -19,7 +19,7 @@ namespace WebApp
 {
     public class Startup
     {
-        readonly string DevFrontEnd = "DevFrontEnd";
+        readonly string CorsPolicy = "CorsPolicy";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,10 +32,12 @@ namespace WebApp
         {
             services.AddCors(options =>
             {
-                options.AddPolicy(DevFrontEnd,
+                options.AddPolicy(CorsPolicy,
                 builder =>
                 {
-                    builder.WithOrigins("*");
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
                 });
             });
 
@@ -62,11 +64,12 @@ namespace WebApp
 
             //For some dumb reason CORS must go in between "UseRouting" and "UseEndpoints" 
             //It WILL NOT WORK otherwise
-            app.UseCors(DevFrontEnd);
+            app.UseCors(CorsPolicy);
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                //https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-3.1#enable-cors-with-endpoint-routing
+                endpoints.MapControllers().RequireCors(CorsPolicy);
             });
         }
     }

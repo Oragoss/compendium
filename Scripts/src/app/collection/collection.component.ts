@@ -27,4 +27,10 @@ export class CollectionComponent implements OnInit {
   onSelect(collection: Collection) {
     this.router.navigate(['/collection', collection.Id]);
   }
+
+  navigateToNewPage() {
+    //TODO: Move this to a collection-new component
+    // collection.DateCreated
+    this.router.navigate(['/collectionnew']);
+  }
 }

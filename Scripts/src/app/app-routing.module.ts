@@ -6,10 +6,12 @@ import { CollectionComponent } from './collection/collection.component';
 import { CollectionDetailComponent } from './collection-detail/collection-detail.component';
 import { ItemComponent } from './item/item.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CollectionNewComponent } from './collection-new/collection-new.component';
 
 const routes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'collections', component: CollectionComponent},
+  {path: 'collectionnew', component: CollectionNewComponent},
   {path: 'collection/:id', component: CollectionDetailComponent},
   {path: 'collection/:id/item/:id', component: ItemComponent},
   {path: '**', component: PageNotFoundComponent}
